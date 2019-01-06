@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src=src-compiled/barf.js></script>
+
+<script type="text/html" id="home">
+
+<h1>Home With Markdown Article Loaded From Github</h1>
+
+<br/>
+<article style="display: auto;margin-left: auto;margin-right: auto;width: 95%" id="post"></article>
+<br/>
+
+<%= article %>
+
+</script>
+
+
+<script type="text/html" id="template1">
+
+<h1>Page 2: <%= greeting %> </h1>
+
+<div id="view"></div>
+<div id="resources"></div>
+
+
+
+<%= html %>
+
+<%= jsLib %>
+<%= fontLib %>
+<%= cssLib %>
+
+</script>
+
+<script type="text/html" id="template2">
+<h1>Page 3: <%= heading %></h1>
+
+<br/>
+<article style="display: auto;margin-left: auto;margin-right: auto;width: 95%" id="post"></article>
+<br/>
+
+<%= article %>
+
+</script>
+
+<script type="text/html" id="template3">
+
+<h1>Page 4: <%= heading %></h1>
+
+<div id="layout"></div>
+<div id="layout2"></div>
+<%= layout %>
+<%= layout2 %>
+
+</script>
+
+</head>
+<body>
+  <ul>
+  <li><a href="#" onclick="clear();">Home</a></li>
+  <li><a href="#/page2" onclick="clear();">Page 2</a></li>
+  <li><a href="#/page3" onclick="clear();">Page 3</a></li>
+    <li><a href="#/page4" onclick="clear();">Page 4</a></li>
+</ul>
+<div id="app"></div>
+<script>
+  route('/', 'home', function () {
+    this.article = barf.MD("https://raw.githubusercontent.com/Dogfalo/materialize/v1-dev/README.md", "post");
+  });
+  route('/page2', 'template1', function () {
+    this.greeting = 'This is Page 2 Where we will load some BLOCKS & SCRIPTS';
+    this.jsLib = barf.JS('./mdl.js', 'resources');
+    this.fontLib = barf.CSS('https://fonts.googleapis.com/icon?family=Material+Icons', 'resources');
+    this.cssLib = barf.CSS('./mdl.css', 'resources');
+    this.html = barf.HTML('./mdl.html', 'view');
+  });
+  route('/page3', 'template2', function () {
+    this.heading = 'I\'m page 3!';
+    this.article = barf.MD('https://raw.githubusercontent.com/kbrsh/moon/master/README.md', 'post')
+
+  });
+  route('/page4', 'template3', function () {
+    this.heading = 'I\'m page #4!';
+    this.layout = barf.HTML('./layout.html', 'layout');
+    this.layout2 = barf.HTML('./mdl.html', 'layout2');
+  });
+</script>
+
+</body>
+</html>

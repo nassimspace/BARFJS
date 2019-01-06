@@ -1,0 +1,38 @@
+{
+  "name": "barf.js",
+  "version": "1.0.0",
+  "description": "Barebones Async Resource Fetcher and Snippet Based, Multi Page & SPA Web App Builder ",
+  "main": "barf.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nassimspace/BARFJS.git"
+  },
+  "keywords": [
+    "async",
+    "js",
+    "javascript",
+    "browser",
+    "library",
+    "frontend",
+    "fetch",
+    "xhr",
+    "api",
+    "load",
+    "css",
+    "html",
+    "markdown",
+    "images"
+  ],
+  "author": "Nassim Abdellaoui",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nassimspace/BARFJS/issues"
+  },
+  "homepage": "https://github.com/nassimspace/BARFJS#readme"
+}
