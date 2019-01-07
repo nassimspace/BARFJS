@@ -69,30 +69,6 @@ b, c])
 		}
 	}
 })();
-(function () {
-	var b = function (b) {
-		return b.replace(/[\[]{1}([^\]]+)[\]]{1}[\(]{1}([^\)"]+)("(.+)")?[\)]{1}/g, '<a href="$2" title="$4" target="_blank" rel="noopener">$1</a>')
-			.replace(/\*\*(.*?)\*\*/ig, "<strong>$1</strong>")
-			.replace(/^>(.+)/gm, "<blockquote>$1</blockquote>")
-			.replace(/!\[([^\]]+)\]\(([^\)]+)\)/g,'<img src="" data-src="$2" alt="$1" style="display: block;margin-left: auto;margin-right: auto;width: 75%" lazyload>')
-			.replace(/^(.+)\n=+/gm, "<h1>$1</h1>")
-			.replace(/^(.+)\n\-+/gm, "<h2>$1</h2>")
-			.replace(/^\s*\n```(([^\s]+))?/gm,'<pre class="$2">')
-			.replace(/^```\s*\n/gm, "</pre>\n\n")
-			.replace(/[\*_]{2}([^\*_]+)[\*_]{2}/g, "<b>$1</b>")
-			.replace(/[\*_]{1}([^\*_]+)[\*_]{1}/g, "<i>$1</i>")
-			.replace(/[~]{2}([^~]+)[~]{2}/g, "<del>$1</del>")
-			.replace(/[`]{1}([^`]+)[`]{1}/g, "<code>$1</code>")
-			.replace(/[#]{6}(.+)/g, "<h6>$1</h6>")
-			.replace(/[#]{5}(.+)/g, "<h5>$1</h5>")
-			.replace(/[#]{4}(.+)/g, "<h4>$1</h4>")
-			.replace(/[#]{3}(.+)/g, "<h3>$1</h3>")
-			.replace(/[#]{2}(.+)/g, "<h2>$1</h2>")
-			.replace(/[#]{1}(.+)/g, "<h1>$1</h1>")
-	};
-	"undefined" !== typeof module &&
-		"object" === typeof exports ? module.exports = b : window.markymark = b
-})();
 function barf() {}
 barf.BLOCK = function (b) {
 	var c = document.currentScript || document.scripts[document.scripts.length - 1],
@@ -120,23 +96,8 @@ barf.BLOCK = function (b) {
 		d = new XMLHttpRequest;
 	d.addEventListener("error", e);
 	d.addEventListener("load", a);
-	d.open("GET", b, !0);
+	d.open("GET", b, true);
 	d.send()
-};
-barf.MD = function (b, c) {
-	fetch(b)
-		.then(function (a) {
-			return a.text()
-		})
-		.then(function (a) {
-			return markymark(a)
-		})
-		.then(function (a) {
-			return document.getElementById(c)
-				.innerHTML = a
-		})["catch"](function (a) {
-			return console.log(a)
-		})
 };
 barf.HTML = function (b, c) {
 	fetch(b)
