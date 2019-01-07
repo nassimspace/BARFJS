@@ -208,7 +208,7 @@ By inserting a ```data-src``` attribute to your image tags, images will load fro
   <script src=./barf.js></script>
   <script type="text/html" id="home">
 
-<h1>Home With Markdown Article Loaded From Github</h1>
+<h1>Home With Article Loaded</h1>
 <br/>
 <article style="display: auto;margin-left: auto;margin-right: auto;width: 95%" id="post"></article>
 <br/>
