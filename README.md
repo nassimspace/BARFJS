@@ -13,7 +13,7 @@ Snippets are inserted in specified ```element``` using the Fetch API & a one lin
 
 **example**:
 
-```
+```html
 <script>barf.HTML('path/to/your/html/file.html', 'elementID');</script>
 ```
 2. #### Load JS files Async
@@ -22,7 +22,7 @@ Loaded JS files have a ```defer``` attribute assigned and are inserted at the en
 
 **example**:
 
-```
+```html
 <script>barf.JS('path/to/your/html/jsFile.js');</script>
 ```
 
@@ -32,7 +32,7 @@ Loaded CSS files (within ```style``` tags) are inserted at the end of ```head```
 
 **example**:
 
-```
+```html
 <script>barf.CSS('path/to/your/html/cssFile.css');</script>
 ```
 
@@ -42,11 +42,13 @@ Loaded HTML files are inserted at the same place the script tag is, making it us
 
 **example**:
 
-```
+```html
 <script>barf.BLOCK('path/to/your/html/htmlComponent.html');</script>
 ```
+
 ##### Example of index.html
-```
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,13 +72,14 @@ Loaded HTML files are inserted at the same place the script tag is, making it us
 </body>
 </html>
 ```
+
 5. #### [John Resig Micro Templating Engine](https://johnresig.com/blog/javascript-micro-templating/) Included
 
 You will be able to build Single Page applications and/or declare html templates within the ```head``` tag to render data in them
 
 **example**:
 
- ```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -182,7 +185,7 @@ By inserting a ```data-src``` attribute to your image tags, images will load fro
 
 **example**:
 
- ```
+```html
 <img src="" data-src="https://example.com/image.jpg" alt="the image in data-src will be injested into src once the document finishes loading" lazyload>
 ```
 
@@ -194,7 +197,7 @@ By inserting a ```data-src``` attribute to your image tags, images will load fro
 
 **example**:
 
- ```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
