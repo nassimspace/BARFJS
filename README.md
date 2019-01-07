@@ -1,24 +1,26 @@
 # BARF.JS | Barebones Async Resource Fetcher JS Library
 
 > *God, I gotta work on that acronym..*
->**Tony Stark - Captain America Civil War** 
+>**Tony Stark - Captain America Civil War**
+
 ---
+
 ## What This Library Does
 
-1. #### Load HTML Snippets Async 
+1. #### Load HTML Snippets Async
 
 Snippets are inserted in specified ```element``` using the Fetch API & a one line script tag.
 
-**example**: 
+**example**:
 
 ```
 <script>barf.HTML('path/to/your/html/file.html', 'elementID');</script>
 ```
-2. #### Load JS files Async 
+2. #### Load JS files Async
 
 Loaded JS files have a ```defer``` attribute assigned and are inserted at the end of  ```body``` using the Fetch API & a one line script tag.
 
-**example**: 
+**example**:
 
 ```
 <script>barf.JS('path/to/your/html/jsFile.js');</script>
@@ -28,43 +30,18 @@ Loaded JS files have a ```defer``` attribute assigned and are inserted at the en
 
 Loaded CSS files (within ```style``` tags) are inserted at the end of ```head``` using the Fetch API & a one line script tag.
 
-**example**: 
+**example**:
 
 ```
 <script>barf.CSS('path/to/your/html/cssFile.css');</script>
 ```
-4. #### Load Markdown files Async
 
-Loaded Markdown files are parsed into HTML & inserted into a specified ```element``` using the Fetch API & a one line script tag.
-
-**example**: 
- 
-```
-<script>barf.MD('path/to/your/html/article.md', 'post');</script>
-```
-
-**example article.html**: 
-
-```
-  <article id="post"></article>
-  
-  <script>barf.MD('./articles/post123.md', 'post')</script>
-```
-
-4. ### MarkyMark.js Micro Markdown Parser Library Included 
-Used in 
-
-```
-barf.MD('postLink.md', 'elementID');
-```
-```postLink.md``` will get parsed by MarkyMark before getting loaded in ```elementID```
-
-5. ### Load HTML Components Async
+4. ### Load HTML Components Async
 
 Loaded HTML files are inserted at the same place the script tag is, making it useful for Shell Architecture and / or HTML Snippets where ```style``` and ```script``` tags are inlined. Furthermore, this is also useful in case of a multi-page web app. It uses XHR & a one line script tag.
 
-**example**: 
- 
+**example**:
+
 ```
 <script>barf.BLOCK('path/to/your/html/htmlComponent.html');</script>
 ```
@@ -93,11 +70,11 @@ Loaded HTML files are inserted at the same place the script tag is, making it us
 </body>
 </html>
 ```
-6. ### [John Resig Micro Templating Engine](https://johnresig.com/blog/javascript-micro-templating/) Included 
+5. ### [John Resig Micro Templating Engine](https://johnresig.com/blog/javascript-micro-templating/) Included
 
-You will be able to build Single Page applications and/or declare html templates to render data in them 
+You will be able to build Single Page applications and/or declare html templates within the ```head``` tag to render data in them
 
-**example**: 
+**example**:
 
  ```
 <!DOCTYPE html>
@@ -111,7 +88,7 @@ You will be able to build Single Page applications and/or declare html templates
 
 <script type="text/html" id="home">
 
-<h1>Home With Markdown Article Loaded From Github</h1>
+<h1>Home With Article</h1>
 <br/>
 <article style="display: auto;margin-left: auto;margin-right: auto;width: 95%" id="post"></article>
 <br/>
@@ -172,7 +149,7 @@ You will be able to build Single Page applications and/or declare html templates
 
 <script>
   route('/', 'home', function () {
-    this.article = barf.MD("https://example.com/article1.md", "post");
+    this.article = barf.HTML("https://example.com/article1.html", "post");
   });
   route('/page2', 'template1', function () {
     this.greeting = 'This is Page 2 Where we will load some BLOCKS & SCRIPTS';
@@ -183,7 +160,7 @@ You will be able to build Single Page applications and/or declare html templates
   });
   route('/page3', 'template2', function () {
     this.heading = 'I\'m page 3!';
-    this.article = barf.MD('https://example.com/article2.md', 'post')
+    this.article = barf.MD('https://example.com/article2.html', 'post')
 
   });
   route('/page4', 'template3', function () {
@@ -197,25 +174,25 @@ You will be able to build Single Page applications and/or declare html templates
 </html>
 ```
 
-7. ### [Joakim Carlstein's Micro Router Included](https://gist.github.com/joakimbeng/7918297/278619bd5ba9b4768eecb0020b09a43f2e8eacea)
+6. ### [Joakim Carlstein's Micro Router Included](https://gist.github.com/joakimbeng/7918297/278619bd5ba9b4768eecb0020b09a43f2e8eacea)
 A Javascript Router for dynamic pages, useful if you want to build a Single Page App.
 
-8. ### Defer Image Loading
+7. ### Defer Image Loading
 By inserting a ```data-src``` attribute to your image tags, images will load from the ```data-src``` link and swap them with the ```src``` attribute on ```window.onload```.
 
-**example**: 
+**example**:
 
  ```
 <img src="" data-src="https://example.com/image.jpg" alt="the image in data-src will be injested into src once the document finishes loading" lazyload>
 ```
 
-9. ### 1.75 Kb (minified & gzipped)
+8. ### 1.28 Kb (minified & gzipped)
 ---
 ### **To Consider**
 
 1. An element with an ```app```  ID for the views:
 
-**example**: 
+**example**:
 
  ```
 <!DOCTYPE html>
@@ -256,13 +233,15 @@ By inserting a ```data-src``` attribute to your image tags, images will load fro
 <nav>
 <script>barf.BLOCK('menu.html');</script>
 </nav>
+
 <div id="app">
 // All the Router / Templates / Dynamic Pages will be loaded here
 </div>
+
 <script>barf.BLOCK('footer.html');</script>
 <script>
   route('/', 'home', function () {
-    this.article = barf.MD("https://example.com/article1.md", "post");
+    this.article = barf.HTML("https://example.com/article1.html", "post");
   });
   route('/page2', 'template1', function () {
     this.greeting = 'This is Page 2 Where we will load some BLOCKS & SCRIPTS';
@@ -283,5 +262,6 @@ By inserting a ```data-src``` attribute to your image tags, images will load fro
 ---
 Licensed under **MIT**
 ---
+
 >*Go break some eggs!*
 >**Tony Stark - Captain America Civil War**
