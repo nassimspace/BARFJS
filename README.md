@@ -1,7 +1,7 @@
 # BARF.JS | Barebones Async Resource Fetcher JS Library
 
-> "*God, I gotta work on that acronym..*" 
-> **Tony Stark | Captain America Civil War** 
+> *God, I gotta work on that acronym..*
+>**Tony Stark - Captain America Civil War** 
 ---
 ## What This Library Does
 
@@ -10,7 +10,8 @@
 Snippets are inserted in specified ```element``` using the Fetch API & a one line script tag.
 
 **example**: 
-```html
+
+```
 <script>barf.HTML('path/to/your/html/file.html', 'elementID');</script>
 ```
 2. #### Load JS files Async 
@@ -18,7 +19,8 @@ Snippets are inserted in specified ```element``` using the Fetch API & a one lin
 Loaded JS files have a ```defer``` attribute assigned and are inserted at the end of  ```body``` using the Fetch API & a one line script tag.
 
 **example**: 
-```html
+
+```
 <script>barf.JS('path/to/your/html/jsFile.js');</script>
 ```
 
@@ -27,7 +29,8 @@ Loaded JS files have a ```defer``` attribute assigned and are inserted at the en
 Loaded CSS files (within ```style``` tags) are inserted at the end of ```head``` using the Fetch API & a one line script tag.
 
 **example**: 
-```html
+
+```
 <script>barf.CSS('path/to/your/html/cssFile.css');</script>
 ```
 4. #### Load Markdown files Async
@@ -35,11 +38,14 @@ Loaded CSS files (within ```style``` tags) are inserted at the end of ```head```
 Loaded Markdown files are parsed into HTML & inserted into a specified ```element``` using the Fetch API & a one line script tag.
 
 **example**: 
-```html
+ 
+```
 <script>barf.MD('path/to/your/html/article.md', 'post');</script>
 ```
-**example of article.html**
-```html
+
+**example article.html**: 
+
+```
   <article id="post"></article>
   
   <script>barf.MD('./articles/post123.md', 'post')</script>
@@ -47,7 +53,8 @@ Loaded Markdown files are parsed into HTML & inserted into a specified ```elemen
 
 4. ### MarkyMark.js Micro Markdown Parser Library Included 
 Used in 
-```js
+
+```
 barf.MD('postLink.md', 'elementID');
 ```
 ```postLink.md``` will get parsed by MarkyMark before getting loaded in ```elementID```
@@ -57,11 +64,12 @@ barf.MD('postLink.md', 'elementID');
 Loaded HTML files are inserted at the same place the script tag is, making it useful for Shell Architecture and / or HTML Snippets where ```style``` and ```script``` tags are inlined. Furthermore, this is also useful in case of a multi-page web app. It uses XHR & a one line script tag.
 
 **example**: 
-```html
+ 
+```
 <script>barf.BLOCK('path/to/your/html/htmlComponent.html');</script>
 ```
 ##### Example of index.html
-```html
+```
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -89,8 +97,9 @@ Loaded HTML files are inserted at the same place the script tag is, making it us
 
 You will be able to build Single Page applications and/or declare html templates to render data in them 
 
- **Example:**
- ```html
+**example**: 
+
+ ```
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -194,8 +203,9 @@ A Javascript Router for dynamic pages, useful if you want to build a Single Page
 8. ### Defer Image Loading
 By inserting a ```data-src``` attribute to your image tags, images will load from the ```data-src``` link and swap them with the ```src``` attribute on ```window.onload```.
 
- **Example:**
- ```html
+**example**: 
+
+ ```
 <img src="" data-src="https://example.com/image.jpg" alt="the image in data-src will be injested into src once the document finishes loading" lazyload>
 ```
 
@@ -205,8 +215,9 @@ By inserting a ```data-src``` attribute to your image tags, images will load fro
 
 1. An element with an ```app```  ID for the views:
 
- **Example:**
- ```html
+**example**: 
+
+ ```
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -272,5 +283,5 @@ By inserting a ```data-src``` attribute to your image tags, images will load fro
 ---
 Licensed under **MIT**
 ---
->"*Go break some eggs!*"
->**Tony Stark | Captain America Civil War**
+>*Go break some eggs!*
+>**Tony Stark - Captain America Civil War**
