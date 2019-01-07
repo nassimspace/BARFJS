@@ -1,4 +1,4 @@
-# BARF.JS | Barebones Async Resource Fetcher Javascript Library
+# BARF.JS | Barebones Async Resource Fetcher JS Library
 
 > "*God, I gotta work on that acronym..*" 
 > **Tony Stark | Captain America Civil War** 
