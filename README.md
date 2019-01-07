@@ -36,7 +36,7 @@ Loaded CSS files (within ```style``` tags) are inserted at the end of ```head```
 <script>barf.CSS('path/to/your/html/cssFile.css');</script>
 ```
 
-4. ### Load HTML Components Async
+4. #### Load HTML Components Async
 
 Loaded HTML files are inserted at the same place the script tag is, making it useful for Shell Architecture and / or HTML Snippets where ```style``` and ```script``` tags are inlined. Furthermore, this is also useful in case of a multi-page web app. It uses XHR & a one line script tag.
 
@@ -66,11 +66,11 @@ Loaded HTML files are inserted at the same place the script tag is, making it us
   <script>barf.BLOCK('./share-comment-component.html')</script>
   <script>barf.BLOCK('./footer.html')</script>
   <script>barf.JS('./JQuery.js')</script>
-  <script>barf.CSS('./myCSSLibrary')</script>
+  <script>barf.CSS('./myCSSLibrary.css')</script>
 </body>
 </html>
 ```
-5. ### [John Resig Micro Templating Engine](https://johnresig.com/blog/javascript-micro-templating/) Included
+5. #### [John Resig Micro Templating Engine](https://johnresig.com/blog/javascript-micro-templating/) Included
 
 You will be able to build Single Page applications and/or declare html templates within the ```head``` tag to render data in them
 
@@ -174,7 +174,7 @@ You will be able to build Single Page applications and/or declare html templates
 </html>
 ```
 
-6. ### [Joakim Carlstein's Micro Router Included](https://gist.github.com/joakimbeng/7918297/278619bd5ba9b4768eecb0020b09a43f2e8eacea)
+6. #### [Joakim Carlstein's Micro Router Included](https://gist.github.com/joakimbeng/7918297/278619bd5ba9b4768eecb0020b09a43f2e8eacea)
 A Javascript Router for dynamic pages, useful if you want to build a Single Page App.
 
 7. ### Defer Image Loading
@@ -186,7 +186,7 @@ By inserting a ```data-src``` attribute to your image tags, images will load fro
 <img src="" data-src="https://example.com/image.jpg" alt="the image in data-src will be injested into src once the document finishes loading" lazyload>
 ```
 
-8. ### 1.28 Kb (minified & gzipped)
+8. #### 1.28 Kb (minified & gzipped)
 ---
 ### **To Consider**
 
@@ -260,7 +260,7 @@ By inserting a ```data-src``` attribute to your image tags, images will load fro
 ---
 #### Built this library to learn and have fun. Also to allow a very easy and  declarative way to build fast web apps.
 ---
-Licensed under **MIT**
+### Licensed under **MIT**
 ---
 
 >*Go break some eggs!*
