@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <script src=src-compiled/barf.js></script>
+  <script src=./barf.js></script>
 
 <script type="text/html" id="home">
 
@@ -70,7 +70,7 @@
 <div id="app"></div>
 <script>
   route('/', 'home', function () {
-    this.article = barf.MD("https://raw.githubusercontent.com/Dogfalo/materialize/v1-dev/README.md", "post");
+    this.article = barf.MD("https://raw.githubusercontent.com/nassimspace/BARFJS/master/README.md", "post");
   });
   route('/page2', 'template1', function () {
     this.greeting = 'This is Page 2 Where we will load some BLOCKS & SCRIPTS';
@@ -81,7 +81,7 @@
   });
   route('/page3', 'template2', function () {
     this.heading = 'I\'m page 3!';
-    this.article = barf.MD('https://raw.githubusercontent.com/kbrsh/moon/master/README.md', 'post')
+    this.article = barf.MD('https://raw.githubusercontent.com/nassimspace/BARFJS/master/README.md', 'post')
 
   });
   route('/page4', 'template3', function () {
