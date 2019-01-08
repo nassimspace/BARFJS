@@ -1,7 +1,7 @@
+
 # BARF.JS | Barebones Async Resource Fetcher JS Library
 
-> *God, I gotta work on that acronym..*
->**Tony Stark - Captain America Civil War**
+#### Micro Javascript Library to Build Fast Web Apps & Single Page Apps. Also able to load Libraries and Resources Async using the Fetch API. 
 
 ---
 
@@ -87,7 +87,7 @@ You will be able to build Single Page applications and/or declare html templates
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <script src=src-compiled/barf.js></script>
+  <script src=./barf.js></script>
 
 <script type="text/html" id="home">
 
@@ -105,7 +105,6 @@ You will be able to build Single Page applications and/or declare html templates
 
 <h1>Page 2: <%= greeting %> </h1>
 <div id="view"></div>
-<div id="resources"></div>
 
 <%= html %>
 <%= jsLib %>
@@ -156,14 +155,14 @@ You will be able to build Single Page applications and/or declare html templates
   });
   route('/page2', 'template1', function () {
     this.greeting = 'This is Page 2 Where we will load some BLOCKS & SCRIPTS';
-    this.jsLib = barf.JS('./mdl.js', 'resources');
-    this.fontLib = barf.CSS('https://fonts.googleapis.com/icon?family=Material+Icons', 'resources');
-    this.cssLib = barf.CSS('./mdl.css', 'resources');
+    this.jsLib = barf.JS('./mdl.js');
+    this.fontLib = barf.CSS('https://fonts.googleapis.com/icon?family=Material+Icons');
+    this.cssLib = barf.CSS('./mdl.css');
     this.html = barf.HTML('./mdl.html', 'view');
   });
   route('/page3', 'template2', function () {
     this.heading = 'I\'m page 3!';
-    this.article = barf.MD('https://example.com/article2.html', 'post')
+    this.article = barf.HTML('https://example.com/article2.html', 'post')
 
   });
   route('/page4', 'template3', function () {
@@ -222,7 +221,6 @@ By inserting a ```data-src``` attribute to your image tags, images will load fro
 
 <h1>Page 2: <%= greeting %> </h1>
 <div id="view"></div>
-<div id="resources"></div>
 
 <%= html %>
 <%= jsLib %>
@@ -248,9 +246,9 @@ By inserting a ```data-src``` attribute to your image tags, images will load fro
   });
   route('/page2', 'template1', function () {
     this.greeting = 'This is Page 2 Where we will load some BLOCKS & SCRIPTS';
-    this.jsLib = barf.JS('./mdl.js', 'resources');
-    this.fontLib = barf.CSS('https://fonts.googleapis.com/icon?family=Material+Icons', 'resources');
-    this.cssLib = barf.CSS('./mdl.css', 'resources');
+    this.jsLib = barf.JS('./mdl.js');
+    this.fontLib = barf.CSS('https://fonts.googleapis.com/icon?family=Material+Icons');
+    this.cssLib = barf.CSS('./mdl.css');
     this.html = barf.HTML('./mdl.html', 'view');
   });
 </script>
@@ -266,5 +264,8 @@ By inserting a ```data-src``` attribute to your image tags, images will load fro
 ### Licensed under **MIT**
 ---
 
->*Go break some eggs!*
+
+
+
+> *God, I gotta work on that acronym..*
 >**Tony Stark - Captain America Civil War**
