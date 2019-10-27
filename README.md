@@ -252,7 +252,7 @@ let routes = {
 
 ## HOW TO USE
 
-### 1. Lazyload
+### 1. Lazyload Images & iFrames
 
 Lazy Load Elements using ***data-lazy='1'*** custom attribute and set the link to ***data-src***, leaving ***src*** empty: 
 
@@ -336,7 +336,7 @@ Use **barf.CSS(URL);** to load css files. The script will fetch the css file, cr
 </head>
 <body>
 ..
-<script>barf.CSS("./css/main.css");</script>
+<script>barf.CSS("/css/main.css");</script>
 <script>barf.HTML("/post/article1.html", "content");</script>
 </body>
 </html>
@@ -363,7 +363,7 @@ Use **barf.JS(URL);** to load js files. The script will fetch the js file, creat
 <div id="menu"></div>
 
 
-<script>barf.CSS("./css/main.css");</script>
+<script>barf.CSS("/css/main.css");</script>
 <script>barf.HTML("/snippet/nav.html", "menu");</script>
 <script>barf.JS("/js/main.js");</script>
 
@@ -396,7 +396,7 @@ Use **barf.MD(URL, ID);** to load js files. The script will fetch the md file, c
 // will contain rendered content from ./posts/awesomeStuff.md
 </article>
 
-<script>barf.CSS("./css/main.css");</script>
+<script>barf.CSS("/css/main.css");</script>
 <script>barf.HTML("/snippet/nav.html", "menu");</script>
 <script>barf.JS("/js/main.js");</script>
 <script>barf.MD("/posts/awesomeStuff.md", "post");</script>
@@ -430,7 +430,7 @@ Use **barf.JSON(URL);** to load json. The script will fetch the json file / endp
 // will contain rendered content from ./posts/awesomeStuff.md
 </article>
 
-<script>barf.CSS("./css/main.css");</script>
+<script>barf.CSS("/css/main.css");</script>
 <script>barf.HTML("/snippet/nav.html", "menu");</script>
 <script>barf.JS("/js/main.js");</script>
 <script>barf.MD("/posts/awesomeStuff.md", "post");</script>
@@ -459,7 +459,7 @@ Use **add2onload();** script to run several events on *window.onload*:
         barf.CSS("/css/main.css")
       ];
 add2Onload(() => {
-    document.getElementById('player').style.visibility = 'visible';
+    document.getElementById('player').style.visibility = 'visible');
 add2Onload(Promise.all([html]));
 add2Onload(Promise.all([styles]));
 // all events handled by add2onload(); will run on window.onload  
@@ -482,7 +482,7 @@ Use [**Promise.all** or **Promise.allSettled()**](https://developer.mozilla.org/
 
 ```js
 const loadEverything = [
-   barf.CSS("./css/main.css"),
+   barf.CSS("/css/main.css"),
    barf.HTML("/snippet/nav.html", "menu"),
    barf.JS("/js/main.js"),
    barf.MD("/posts/awesomeStuff.md", "post"),
