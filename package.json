@@ -1,0 +1,40 @@
+{
+  "name": "barf.js",
+  "version": "2.0.0",
+  "description": "6kb VANILLA JS LIBRARY TO BUILD PERFORMANT SPA’s & WEB APPS",
+  "main": "./dist/barf.js",
+  "directories": {},
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nassimspace/BARFJS.git"
+  },
+  "keywords": [
+    "async",
+    "js",
+    "url",
+    "es6",
+    "promises",
+    "spa",
+    "intersectionObserver",
+    "iframes",
+    "javascript",
+    "browser",
+    "library",
+    "frontend",
+    "fetch",
+    "xhr",
+    "api",
+    "load",
+    "css",
+    "html",
+    "markdown",
+    "images"
+  ],
+  "author": "Nassim Abdellaoui",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nassimspace/BARFJS/issues"
+  },
+  "homepage": "https://github.com/nassimspace/BARFJS#readme"
+}
