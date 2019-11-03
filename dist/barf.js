@@ -1,41 +1,5 @@
+
 let barf = async () => await {};
-
-let redirect404 = () => {
-  var segmentCount = 0;
-  var location = window.location;
-  location.replace(location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + location.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/?p=/' + location.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&/g, '~and~') + (location.search ? '&q=' + location.search.slice(1).replace(/&/g, '~and~') : '') + location.hash);
-};
-
-let recieveRedirect = () => {
-  (function (location) {
-    if (location.search) {
-      var q = {};
-      location.search.slice(1).split('&').forEach(function (v) {
-        var a = v.split('=');
-        q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
-      });
-
-      if (q.p !== undefined) {
-        window.history.replaceState(null, null, location.pathname.slice(0, -1) + (q.p || '') + (q.q ? '?' + q.q : '') + location.hash);
-      }
-    }
-  })(window.location);
-};
-
-let appView = "";
-let routes = "";
-
-window.onpopstate = () => {
-  appView.innerHTML = routes[window.location.pathname];
-};
-
-let navRoute = pathName => {
-  window.history.pushState({}, pathName, window.location.origin + pathName);
-  appView.innerHTML = routes[pathName];
-};
-
-appView.innerHTML = routes[window.location.pathname];
-
 
 let add2Onload = func => {
   let oldonload = window.onload;
@@ -76,18 +40,6 @@ add2Onload(() => {
     }
   }
 });
-
-(() => {
-  let bmp = md => {
-    return md.replace(/[\[]{1}([^\]]+)[\]]{1}[\(]{1}([^\)\"]+)(\"(.+)\")?[\)]{1}/g, '<a href="$2" title="$4" target="_blank" rel="noopener">$1</a>').replace(/\*\*(.*?)\*\*/gi, "<strong>$1</strong>").replace(/^\>(.+)/gm, "<blockquote>$1</blockquote>").replace(/\!\[([^\]]+)\]\(([^\)]+)\)/g, '<img src="" data-src="$2" alt="$1" style="display: block;margin-left: auto;margin-right: auto;width: 75%" data-lazy="1">').replace(/^(.+)\n\=+/gm, "<h1>$1</h1>").replace(/^(.+)\n\-+/gm, "<h2>$1</h2>").replace(/^\s*\n\`\`\`(([^\s]+))?/gm, '<pre class="$2">').replace(/^\`\`\`\s*\n/gm, "</pre>\n\n").replace(/[\*\_]{2}([^\*\_]+)[\*\_]{2}/g, "<b>$1</b>").replace(/[\*\_]{1}([^\*\_]+)[\*\_]{1}/g, "<i>$1</i>").replace(/[\~]{2}([^\~]+)[\~]{2}/g, "<del>$1</del>").replace(/[\`]{1}([^\`]+)[\`]{1}/g, "<code>$1</code>").replace(/[\#]{6}(.+)/g, "<h6>$1</h6>").replace(/[\#]{5}(.+)/g, "<h5>$1</h5>").replace(/[\#]{4}(.+)/g, "<h4>$1</h4>").replace(/[\#]{3}(.+)/g, "<h3>$1</h3>").replace(/[\#]{2}(.+)/g, "<h2>$1</h2>").replace(/[\#]{1}(.+)/g, "<h1>$1</h1>");
-  };
-
-  if (typeof module !== "undefined" && typeof exports === "object") {
-    module.exports = bmp;
-  } else {
-    window.bmp = bmp;
-  }
-})();
 
 barf = {
   URL: item => {
@@ -131,9 +83,7 @@ barf.CP = l => {
   a.send();
 };
 
-barf.MD = (url, id) => {
-  const resMD = fetch(url).then(r => r.text()).then(data => bmp(data)).then(content => document.getElementById(id).innerHTML = content).catch(e => console.log(e));
-};
+
 
 barf.HTML = (url, id) => {
   const resHTML = fetch(url, {
@@ -162,6 +112,15 @@ barf.JS = url => {
     cache: "force-cache"
   }).then(r => r.text()).then(data => js.textContent = data).then(content => document.getElementsByTagName("body")[0].appendChild(js)).catch(e => console.log(e));
   return resJS;
+};
+
+barf.MD = (url, id) => {
+  barf.js('https://raw.githubusercontent.com/markedjs/marked/master/lib/marked.js')
+  const resMD = fetch(url)
+  .then(r => r.text())
+  .then(data => marked(data);)
+  .then(content => document.getElementById(id).innerHTML = content)
+  .catch(e => console.log(e));
 };
 
 barf.JSON = url => {
