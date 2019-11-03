@@ -1,5 +1,5 @@
 ﻿![BARF.JS](https://www.svgrepo.com/show/271852/vomiting-emoji.svg)
-# BARF.JS | 6kb VANILLA JS LIBRARY TO BUILD PERFORMANT SPA's & WEB APPS  
+# BARF.JS | VANILLA JS LIBRARY TO BUILD PERFORMANT SPA's & WEB APPS  
 
 ## THE WHY
 I found myself re-using codes, functions & several js features on my personal learning projects and figured why not put them all together in a single script!
