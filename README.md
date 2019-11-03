@@ -1,5 +1,5 @@
 ﻿![BARF.JS](https://www.svgrepo.com/show/271852/vomiting-emoji.svg)
-# BARF.JS | VANILLA JS LIBRARY TO BUILD PERFORMANT SPA's & WEB APPS  
+# BARF.JS | VANILLA JS LIBRARY TO BUILD PERFORMANT WEB APPS  
 
 ## THE WHY
 I found myself re-using codes, functions & several js features on my personal learning projects and figured why not put them all together in a single script!
@@ -8,11 +8,11 @@ I found myself re-using codes, functions & several js features on my personal le
 This javascript library compiles some of the best open source contributions, js optimizations and snippets one may find useful:
 
  1. Functional / Declarative way to achieve complexe operations
- 2. Using the Fetch API to load HTML, CSS, JS, JSON & Markdown
+ 2. Using the Fetch API to load HTML, CSS, JS, JSON 
  3. Load iFrames & Images using IntersectionObserver
  4. Chain multiple events / inits on *window.onload*
  5. Get values from URL Parameters with a one-liner function
- 6. Modern Vanilla Javascript | ES6 - ES5 - ClosureCompiled Versions
+ 6. Modern Vanilla Javascript 
 
 
 ## SETUP
