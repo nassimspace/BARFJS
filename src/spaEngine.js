@@ -45,8 +45,8 @@ let recieveRedirect = () => {
 //  </ul>
 // </nav>
 
-let appView = undefined;
-let routes = undefined;
+let appView = "";
+let routes = "";
 
 window.onpopstate = () => {
   appView.innerHTML = routes[window.location.pathname];
