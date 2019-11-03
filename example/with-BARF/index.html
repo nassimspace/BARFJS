@@ -10,19 +10,30 @@
 
   <title>BARF.JS | Vanilla Javascript Library to Build Fast Web Apps</title>
   <script src="assets/barf.js"></script>
-  <link rel="stylesheet" href="./assets/web/assets/mobirise-icons/mobirise-icons.css">
-  <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.css">
-  <link rel="stylesheet" href="./assets/tether/tether.min.css">
-  <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="assets/dropdown/css/style.css">
-  <link rel="stylesheet" href="assets/socicon/css/styles.css">
-  <link rel="stylesheet" href="assets/animatecss/animate.min.css">
-  <link rel="stylesheet" href="assets/theme/css/style.css">
-  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-
-
+  <script>
+//  let appView = document.getElementById('app');
+//  let routes = {
+//      '/': home,
+//      '/index.html': home,
+//      '/setup': setup,
+//      '/lazyload': lazyload,
+//      '/comment': discuss,
+// };
+ const css = [
+   barf.CSS('assets/web/assets/mobirise-icons/mobirise-icons.css'),
+   barf.CSS('assets/font-awesome/css/font-awesome.css'),
+   barf.CSS('assets/tether/tether.min.css'),
+   barf.CSS('assets/bootstrap/css/bootstrap.min.css'),
+   barf.CSS('assets/bootstrap/css/bootstrap-grid.min.css'),
+   barf.CSS('assets/bootstrap/css/bootstrap-reboot.min.css'),
+   barf.CSS('assets/dropdown/css/style.css'),
+   barf.CSS('assets/socicon/css/styles.css'),
+   barf.CSS('assets/animatecss/animate.min.css'),
+   barf.CSS('assets/theme/css/style.css'),
+   barf.CSS('assets/mobirise/css/mbr-additional.css')
+ ];
+ Promise.allSettled([css]);
+  </script>
 
 <meta name="theme-color" content="#3c0256">
 <meta name="mobile-web-app-capable" content="yes">
@@ -112,7 +123,7 @@
                         6kb Vannila JS Library to build permormance driven SPA's &amp; Web Apps, using the latest syntax and advancements in web and javascript
                     </p>
                 </div>
-                <div class="mbr-section-btn"><a class="btn btn-md btn-success display-4" href="index.html#features12-8">LEARN MORE</a> <a class="btn btn-md btn-info display-4" href="https://github.com/nassimspace/BARFJS" target="_blank"><span class="fa fa-github mbr-iconfont mbr-iconfont-btn" style="color: rgb(255, 255, 255);"></span>GITHUB</a></div>
+                <div class="mbr-section-btn"><a class="btn btn-md btn-success display-4" href="index.html#features12-8">LEARN MORE</a> <a class="btn btn-md btn-info display-4" href="https://github.com/nassimspace/BARFJS" target="_blank" rel="noopener"><span class="fa fa-github mbr-iconfont mbr-iconfont-btn" style="color: rgb(255, 255, 255);"></span>GITHUB</a></div>
             </div>
         </div>
     </div>
@@ -205,65 +216,26 @@
 </section>
 </main>
 
-<section once="footers" class="cid-rGFxMFnjzD" id="footer7-5">
+<script>barf.CP('components/footer.html');</script>
 
+<script src="assets/web/assets/jquery/jquery.min.js"></script>
 
+<script>
+    const js = [
+barf.JS('assets/bootstrap/js/bootstrap.min.js'),
+barf.JS('assets/popper/popper.min.js'),
+barf.JS('assets/tether/tether.min.js'),
+barf.JS('assets/dropdown/js/nav-dropdown.js'),
+barf.JS('assets/dropdown/js/navbar-dropdown.js'),
+barf.JS('assets/viewportchecker/jquery.viewportchecker.js'),
+barf.JS('assets/parallax/jarallax.min.js'),
+barf.JS('assets/smoothscroll/smooth-scroll.js'),
+barf.JS('assets/touchswipe/jquery.touch-swipe.min.js'),
+barf.JS('assets/theme/js/script.js')
+    ];
+    Promise.allSettled([js]);
+</script>
 
-
-
-    <div class="container">
-        <div class="media-container-row align-center mbr-white">
-
-            <div class="row social-row">
-                <div class="social-list align-right pb-2">
-
-
-
-
-
-
-                <div class="soc-item">
-                        <a href="https://twitter.com/nassimspace" target="_blank">
-                            <span class="mbr-iconfont mbr-iconfont-social socicon-twitter socicon" style="font-size: 32px; color: rgb(85, 180, 212); fill: rgb(85, 180, 212);"></span>
-                        </a>
-                    </div><div class="soc-item">
-                        <a href="https://www.facebook.com/nassimspace" target="_blank">
-                            <span class="mbr-iconfont mbr-iconfont-social socicon-facebook socicon" style="font-size: 32px; color: rgb(0, 51, 159); fill: rgb(0, 51, 159);"></span>
-                        </a>
-                    </div><div class="soc-item">
-                        <a href="https://instagram.com/nassimspace" target="_blank">
-                            <span class="mbr-iconfont mbr-iconfont-social socicon-instagram socicon" style="color: rgb(160, 0, 231); fill: rgb(160, 0, 231); font-size: 32px;"></span>
-                        </a>
-                    </div><div class="soc-item">
-                        <a href="https://www.linkedin.com/in/nassim-abdellaoui/" target="_blank">
-                            <span class="mbr-iconfont mbr-iconfont-social fa-linkedin-square fa" style="color: rgb(15, 118, 153); fill: rgb(15, 118, 153); font-size: 36px;"></span>
-                        </a>
-                    </div><div class="soc-item">
-                        <a href="https://github.com/nassimspace" target="_blank">
-                            <span class="mbr-iconfont mbr-iconfont-social fa-github fa" style="font-size: 32px;"></span>
-                        </a>
-                    </div></div>
-            </div>
-            <div class="row row-copirayt">
-                <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
-                    <a href="https://twitter.com/NassimSpace" target="_blank">@NassimSpace - 2019</a></p>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-  <script src="assets/web/assets/jquery/jquery.min.js"></script>
-  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-  <script src="assets/popper/popper.min.js"></script>
-  <script src="assets/tether/tether.min.js"></script>
-  <script src="assets/dropdown/js/nav-dropdown.js"></script>
-  <script src="assets/dropdown/js/navbar-dropdown.js"></script>
-  <script src="assets/viewportchecker/jquery.viewportchecker.js"></script>
-  <script src="assets/parallax/jarallax.min.js"></script>
-  <script src="assets/smoothscroll/smooth-scroll.js"></script>
-  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
-  <script src="assets/theme/js/script.js"></script>
 
 
  <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
