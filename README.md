@@ -197,6 +197,8 @@ let routes = {
 </html>
 ```
  6. Setup dynamic routing with the ***navRoute*** *onclick* function on your navigation items: 
+
+
   ```HTML
 // index.html
 
@@ -245,6 +247,7 @@ let routes = {
 </body>
 </html>
 ```
+
 7. You're done!
 
 **Please note that this method is indeed very opinionated, but also very declarative / easy to use at the same time. It doesn't require complexe javascript *savvyness* to achieve performance driven development and thus, making it beginner friendly** 
